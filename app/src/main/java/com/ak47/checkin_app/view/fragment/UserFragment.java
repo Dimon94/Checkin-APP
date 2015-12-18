@@ -15,6 +15,7 @@ import com.ak47.checkin_app.GloableParams;
 import com.ak47.checkin_app.R;
 import com.ak47.checkin_app.common.UserUtils;
 import com.ak47.checkin_app.common.Utils;
+import com.ak47.checkin_app.view.activity.ImageActivity;
 import com.ak47.checkin_app.view.activity.PublicActivity;
 import com.ak47.checkin_app.view.activity.SettingActivity;
 import com.ak47.checkin_app.view.activity.UserActivity;
@@ -86,7 +87,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
             case R.id.txt_album:// 相册
                 ContentValues values = new ContentValues();
                 values.put( Constants.NAME, getString(R.string.my_posts));
-                Utils.start_Activity(getActivity(), PublicActivity.class,
+                Utils.start_Activity(getActivity(), ImageActivity.class,
                          values);
                 break;
             case R.id.txt_collect:// 收藏
