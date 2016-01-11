@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ak47.checkin_app.MyUser;
 import com.ak47.checkin_app.R;
 
 import cn.bmob.v3.BmobUser;

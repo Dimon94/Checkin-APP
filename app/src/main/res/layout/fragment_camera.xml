@@ -1,5 +1,4 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,50 +7,50 @@
     <com.ak47.checkin_app.camera.SquareCameraPreview
         android:id="@+id/camera_preview_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <View
         android:id="@+id/cover_top_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_alignTop="@id/camera_preview_view"
-        android:background="@android:color/black"/>
+        android:background="@android:color/black" />
 
     <View
         android:id="@+id/cover_bottom_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_alignBottom="@id/camera_preview_view"
-        android:background="@android:color/black"/>
+        android:background="@android:color/black" />
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/camera_tools_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/camera_preview_view"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="10px"
         android:background="@android:color/black"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10px">
 
         <ImageView
             android:id="@+id/change_camera"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon_camera"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/icon_camera" />
 
         <ImageView
             android:id="@+id/capture_image_button"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:src="@drawable/capture_photo_button"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/capture_photo_button" />
 
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/flash"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
@@ -67,15 +66,15 @@
                 android:id="@+id/auto_flash_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/flash_icon"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="5px"
+                android:layout_toRightOf="@id/flash_icon"
                 android:text="Auto"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"/>
+                android:textSize="30px" />
 
-        </RelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 
-</RelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

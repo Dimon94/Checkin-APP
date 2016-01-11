@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,14 +14,14 @@
     <View
         android:id="@+id/cover_top_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_alignTop="@id/photo"
         android:background="@android:color/black"/>
 
     <View
         android:id="@+id/cover_bottom_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:background="@android:color/black"
         android:layout_alignBottom="@id/photo"/>
 
@@ -29,7 +29,7 @@
         android:id="@+id/save_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="20px"
         android:layout_alignParentBottom="true"
         android:src="@drawable/save_photo_drawable"
         android:background="@android:color/transparent"
@@ -39,7 +39,7 @@
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="20px"
         android:src="@drawable/cancel_drawable"
         android:background="@android:color/transparent"
         android:onClick="onCancel"/>
@@ -51,7 +51,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:padding="10dp"
+        android:padding="20px"
         android:text="添加时间"/>
 
-</RelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

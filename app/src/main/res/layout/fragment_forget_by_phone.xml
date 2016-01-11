@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +10,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="150px"
         android:src="@drawable/phone"
         android:id="@+id/imageView" />
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,8 +25,8 @@
             android:hint="输入手机号码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -34,21 +34,21 @@
 
             android:id="@+id/etVerifyCode"
             android:hint="输入验证码"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dip"
+            android:layout_marginRight="10px"
             android:layout_weight="1"
             android:layout_gravity="bottom" />
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:text="获取验证码"
             android:id="@+id/btnGetCode"
             android:layout_gravity="right"
             android:layout_weight="2" />
-    </LinearLayout>
-    <LinearLayout
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -58,17 +58,17 @@
 
             android:id="@+id/etPwd"
             android:inputType="textEmailAddress"
-            android:layout_marginRight="10dip"
+            android:layout_marginRight="10px"
             android:hint="输入新的的密码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
     <Button
         android:id="@+id/btnResetPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="11pt"
+        android:layout_marginTop="16px"
+        android:textSize="35px"
         android:textColor="@color/bn_blue"
         android:text="重设密码"/>
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

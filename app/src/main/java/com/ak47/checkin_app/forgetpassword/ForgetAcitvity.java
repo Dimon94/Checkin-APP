@@ -1,14 +1,12 @@
 package com.ak47.checkin_app.forgetpassword;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.ak47.checkin_app.R;
+import com.zhy.autolayout.AutoLayoutActivity;
 
-public class ForgetAcitvity extends AppCompatActivity {
+public class ForgetAcitvity extends AutoLayoutActivity {
 
     private RadioGroup rg;
     @Override

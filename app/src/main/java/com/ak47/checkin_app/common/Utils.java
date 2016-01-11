@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.ak47.checkin_app.Constants;
 import com.ak47.checkin_app.R;
 
 import java.text.DateFormat;

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".view.activity.RegisterActivity"
-    android:gravity="center_vertical">
+    tools:context=".view.activity.RegisterActivity">
 
 
     <GridLayout
@@ -16,22 +16,22 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_width="match_parent"
-            android:textSize="13pt"
-            android:layout_height="110dp"
-            android:text="手机一键注册"
             android:id="@+id/bn_reg_phoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="110px"
+            android:layout_column="1"
             android:layout_row="1"
-            android:layout_column="1" />
+            android:text="手机一键注册"
+            android:textSize="40px" />
 
         <Button
-            android:layout_width="match_parent"
-            android:textSize="13pt"
-            android:layout_height="110dp"
-            android:text="邮箱注册"
             android:id="@+id/bn_reg_email"
+            android:layout_width="match_parent"
+            android:layout_height="110px"
+            android:layout_column="1"
             android:layout_row="2"
-            android:layout_column="1" />
+            android:text="邮箱注册"
+            android:textSize="40px" />
 
     </GridLayout>
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

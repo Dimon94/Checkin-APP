@@ -86,6 +86,12 @@
             android:value="rOIdyrFkYTc7Gj91s5i1xf72" />
         <!-- key:开发者申请的key -->
 
+        <!-- Android屏幕适配方案 -->
+        <meta-data android:name="design_width" android:value="1080">
+        </meta-data>
+        <meta-data android:name="design_height" android:value="1920">
+        </meta-data>
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

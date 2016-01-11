@@ -32,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ak47.checkin_app.MainActivity;
-import com.ak47.checkin_app.MyUser;
+import com.ak47.checkin_app.bean.MyUser;
 import com.ak47.checkin_app.forgetpassword.ForgetAcitvity;
 import com.ak47.checkin_app.R;
 

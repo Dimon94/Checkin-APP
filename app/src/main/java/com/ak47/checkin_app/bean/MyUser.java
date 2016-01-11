@@ -1,4 +1,4 @@
-package com.ak47.checkin_app;
+package com.ak47.checkin_app.bean;
 
 import cn.bmob.v3.BmobUser;
 

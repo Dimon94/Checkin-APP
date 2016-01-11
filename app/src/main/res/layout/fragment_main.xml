@@ -1,66 +1,68 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fgMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:id="@+id/fgMain"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:paddingTop="@dimen/activity_vertical_margin">
+
     <TableLayout
-        android:stretchColumns="*"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <TableRow>
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <Button
+
+                android:id="@+id/bnTakePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableTop="@drawable/ic_photo"
+                android:text="拍照" />
+
+            <Button
+                android:id="@+id/bnTakeMedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bn_get_location"
+                android:layout_centerHorizontal="true"
+                android:drawableTop="@drawable/ic_video"
+                android:text="录像" />
+
+            <Button
+                android:id="@+id/bn_get_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:drawableTop="@drawable/ic_location"
+                android:text="定位" />
+        </TableRow>
 
         <Button
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="拍照"
-            android:id="@+id/bnTakePhoto"
-            android:drawableTop="@drawable/ic_photo"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_video"
-            android:text="录像"
-            android:id="@+id/bnTakeMedia"
-            android:layout_below="@+id/bn_get_location"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="定位"
-            android:drawableTop="@drawable/ic_location"
-            android:id="@+id/bn_get_location"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-    </TableRow>
-
-        <Button
-
-            android:paddingBottom="5dp"
-            android:gravity="center_horizontal"
+            android:id="@+id/bnCheckIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/ic_checkblue"
-            android:text="点击完成签到"
-            android:id="@+id/bnCheckIn" />
+            android:gravity="center_horizontal"
+            android:paddingBottom="5px"
+            android:text="点击完成签到" />
+
         <Button
 
-            android:paddingBottom="5dp"
-            android:gravity="center_horizontal"
+            android:id="@+id/bnCheckOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/ic_checkout"
-            android:text="下班啦！去打卡！"
-            android:id="@+id/bnCheckOut" />
+            android:gravity="center_horizontal"
+            android:paddingBottom="5px"
+            android:text="下班啦！去打卡！" />
 
 
     </TableLayout>
@@ -68,17 +70,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="10px"
+        android:drawableTop="@drawable/ic_add"
         android:gravity="center_horizontal"
-        android:paddingBottom="5dp"
-        android:text="更多功能请期待~"
-        android:drawableTop="@drawable/ic_add"/>
+        android:paddingBottom="5px"
+        android:text="更多功能请期待~" />
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

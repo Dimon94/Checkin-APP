@@ -2,13 +2,12 @@ package com.ak47.checkin_app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ak47.checkin_app.R;
+import com.ak47.checkin_app.bean.MyUser;
 
 import cn.bmob.v3.listener.SaveListener;
 

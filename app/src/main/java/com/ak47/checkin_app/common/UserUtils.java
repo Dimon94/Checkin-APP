@@ -3,8 +3,7 @@ package com.ak47.checkin_app.common;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.ak47.checkin_app.Constants;
-import com.ak47.checkin_app.MyUser;
+import com.ak47.checkin_app.bean.MyUser;
 import com.alibaba.fastjson.JSON;
 
 public class UserUtils {

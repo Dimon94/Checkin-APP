@@ -1,5 +1,7 @@
 package com.ak47.checkin_app;
 
+import com.ak47.checkin_app.bean.MyUser;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

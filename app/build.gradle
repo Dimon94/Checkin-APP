@@ -21,7 +21,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
+    androidTestCompile 'junit:junit:4.12'
     compile files('libs/locSDK_3.1.jar')
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/xutils.2.6.15.jar')
@@ -34,4 +34,5 @@ dependencies {
     compile files('libs/httpmime-4.1.3.jar')
     compile files('libs/JsonUtils.jar')
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.zhy:autolayout:1.3.6'
 }

@@ -1,4 +1,4 @@
-package com.ak47.checkin_app;
+package com.ak47.checkin_app.common;
 
 public interface Constants {
 

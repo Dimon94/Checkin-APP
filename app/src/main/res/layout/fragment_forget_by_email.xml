@@ -1,43 +1,49 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.ak47.checkin_app.forgetpassword.ForgetByPhoneFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.ak47.checkin_app.forgetpassword.ForgetByPhoneFragment">
 
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:src="@drawable/email"
-        android:id="@+id/imageView" />
-    <LinearLayout
+        android:layout_margin="150px"
+        android:src="@drawable/email" />
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入验证邮箱"/>
+            android:hint="请输入验证邮箱" />
 
-    </LinearLayout>
-    <LinearLayout
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/btnSendEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="发一封邮件到我的邮箱"/>
+            android:layout_marginTop="30px"
+            android:text="发一封邮件到我的邮箱"
+            android:textSize="35px"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="建议用手机号码重置"/>
-    </LinearLayout>
-</LinearLayout>
+            android:layout_marginTop="30px"
+            android:text="建议用手机号码重置" />
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

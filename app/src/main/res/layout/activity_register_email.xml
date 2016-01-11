@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.ak47.checkin_app.RegisterEmail">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
         <EditText
 
             android:id="@+id/et_register_email"
-            android:inputType="textEmailAddress"
-            android:hint="@string/login_username_hint_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:hint="@string/login_username_hint_email"
+            android:inputType="textEmailAddress" />
+    </com.zhy.autolayout.AutoLinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
         <EditText
 
             android:id="@+id/et_password_email"
-            android:hint="@string/login_password_hint"
-            android:password="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password_hint"
+            android:password="true" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <EditText
 
             android:id="@+id/et_password2_email"
-            android:hint="@string/login_password2_hint"
-            android:password="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password2_hint"
+            android:password="true" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
     <Button
         android:id="@+id/bn_reg_emailview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="11pt"
+        android:layout_marginTop="16px"
+        android:text="@string/bn_register"
         android:textColor="@color/bn_blue"
-        android:text="@string/bn_register"/>
-</LinearLayout>
+        android:textSize="40px" />
+</com.zhy.autolayout.AutoLinearLayout>

@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.activity.InitActivity">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg_init"/>
+        android:src="@drawable/bg_init" />
 
 </LinearLayout>

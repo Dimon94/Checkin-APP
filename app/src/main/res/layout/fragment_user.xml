@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fgMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:id="@+id/fgMain"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:paddingTop="@dimen/activity_vertical_margin">
+
     <TableLayout
-        android:stretchColumns="*"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
 
         <ImageView
 
-            android:paddingBottom="30dp"
-            android:src="@drawable/ic_account"
-            android:gravity="center_horizontal"
+            android:id="@+id/bnCheckIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="点击完成签到"
-            android:id="@+id/bnCheckIn" />
+            android:gravity="center_horizontal"
+            android:padding="45px"
+            android:src="@drawable/ic_account"
+            android:text="点击完成签到" />
+
         <TableRow>
 
             <Button
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="考勤记录"
+                android:layout_centerHorizontal="true"
                 android:drawableTop="@drawable/ic_day"
-                android:layout_centerHorizontal="true" />
+                android:text="考勤记录" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -40,40 +41,40 @@
                 android:drawableTop="@drawable/ic_info"
                 android:text="我的资料" />
         </TableRow>
+
         <TableRow>
+
             <Button
-                android:text="任务委派"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/ic_task"
-                />
+                android:text="任务委派" />
 
             <Button
-                android:text="传纸条"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/ic_msg"
-                />
+                android:text="传纸条" />
         </TableRow>
+
         <TableRow>
+
             <Button
-                android:text="退出登录"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/ic_exit"
-                />
+                android:text="退出登录" />
+
             <Button
-                android:text="请期待..."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/ic_add"
-                />
+                android:text="请期待..." />
 
         </TableRow>
-
 
 
     </TableLayout>
 
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>
