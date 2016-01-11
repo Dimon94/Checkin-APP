@@ -11,8 +11,6 @@ import android.view.WindowManager;
 
 import com.ak47.checkin_app.R;
 
-//import com.desmond.squarecamera.R;
-
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -33,10 +31,10 @@ public class CameraActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(uiOptions);
         }
 
-        if(getSupportActionBar() != null){
-            getSupportActionBar().hide();    
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
         }
-        
+
         getWindow().setBackgroundDrawable(null);
         setContentView(R.layout.activity_camera);
 
@@ -65,3 +63,4 @@ public class CameraActivity extends AppCompatActivity {
         getSupportFragmentManager().popBackStack();
     }
 }
+

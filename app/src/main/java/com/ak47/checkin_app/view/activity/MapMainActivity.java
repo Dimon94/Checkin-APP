@@ -47,7 +47,6 @@ public class MapMainActivity extends Activity {
         mapLayout = (LinearLayout) findViewById(R.id.map);
         initMap();
     }
-
     private void initMap() {
         BaiduMapOptions options = new BaiduMapOptions();
         options.compassEnabled(false); // 允许指南针

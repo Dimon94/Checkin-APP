@@ -4,12 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.util.Base64;
 import android.view.Display;
 import android.view.WindowManager;
@@ -22,8 +29,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-//import com.desmond.squarecamera.R;
 
 /**
  * Created by desmond on 24/10/14.
@@ -63,7 +68,7 @@ public class ImageUtility {
     public static Uri savePicture(Context context, Bitmap bitmap) {
         int cropHeight;
         if (bitmap.getHeight() > bitmap.getWidth()) cropHeight = bitmap.getWidth();
-        else                                        cropHeight = bitmap.getHeight();
+        else cropHeight = bitmap.getHeight();
 
         bitmap = ThumbnailUtils.extractThumbnail(bitmap, cropHeight, cropHeight, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
 
@@ -82,6 +87,7 @@ public class ImageUtility {
         File mediaFile = new File(
                 mediaStorageDir.getPath() + File.separator + "IMG_" + timeStamp + ".jpg"
         );
+
 
         // Saving the bitmap
         try {
@@ -119,6 +125,95 @@ public class ImageUtility {
 
         return BitmapFactory.decodeFile(path, options);
     }
+
+    //获取图片缩小的图片
+    public static Bitmap scaleBitmap(String src, int max) {
+        //获取图片的高和宽
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        //这一个设置使 BitmapFactory.decodeFile获得的图片是空的,但是会将图片信息写到options中
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(src, options);
+        // 计算比例 为了提高精度,本来是要640 这里缩为64
+        max = max / 10;
+        int be = options.outWidth / max;
+        if (be % 10 != 0)
+            be += 10;
+        be = be / 10;
+        if (be <= 0)
+            be = 1;
+        options.inSampleSize = be;
+        //设置可以获取数据
+        options.inJustDecodeBounds = false;
+        //获取图片
+        return BitmapFactory.decodeFile(src, options);
+    }
+
+    // 加水印 也可以加文字
+    public static Bitmap watermarkBitmap(Bitmap src, Bitmap watermark,
+                                         String title, int densityDpi) {
+
+        int dpi = densityDpi;
+        //读取原图片信息
+
+        if (src == null) {
+            return null;
+        }
+        int w = src.getWidth();
+        int h = src.getHeight();
+        Bitmap tarBitmap = src.copy(Bitmap.Config.ARGB_8888, true);
+        //Bitmap tarBitmap= Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);// 创建一个新的和SRC长度宽度一样的位图
+        Canvas canvas = new Canvas(tarBitmap);
+        canvas.drawBitmap(src, 0, 0, null);// 在 0，0坐标开始画入src
+        Paint paint = new Paint();
+        //加入图片
+        if (watermark != null) {
+            int ww = watermark.getWidth();
+            int wh = watermark.getHeight();
+            paint.setAlpha(50);
+            canvas.drawBitmap(watermark, w - ww + 5, h - wh + 5, paint);// 在src的右下角画入水印
+        }
+        //加入文字
+        if (title != null) {
+            String familyName = "宋体";
+            Typeface font = Typeface.create(familyName, Typeface.BOLD);
+            TextPaint textPaint = new TextPaint();
+            textPaint.setColor(Color.RED);
+            textPaint.setTypeface(font);
+            textPaint.setTextSize(50);
+            if (dpi <= 120) {//qvga 240X400
+                textPaint.setTextSize(5);
+            } else if (dpi <= 160) {//hvga 320X480
+                textPaint.setTextSize(8);
+            } else if (dpi <= 240) {//wvga 480X800
+                textPaint.setTextSize(10);
+                if (w > 700) {
+
+                    textPaint.setTextSize(15);
+                }
+            } else if (dpi <= 320) {// 1280*720
+
+                textPaint.setTextSize(15);
+                if (w > 2000) {
+
+                    textPaint.setTextSize(72);
+                }
+
+            } else { //更大屏幕分辨率
+
+                textPaint.setTextSize(72);
+            }
+
+            //这里是自动换行的
+            StaticLayout layout = new StaticLayout(title, textPaint, w, Layout.Alignment.ALIGN_NORMAL, 1.0F, 0.0F, true);
+            layout.draw(canvas);
+            //文字就加左上角算了
+            canvas.drawText(title, (float) (w * 0.10), (float) (h * 0.20), textPaint);
+        }
+        canvas.save(Canvas.ALL_SAVE_FLAG);// 保存
+        canvas.restore();// 存储
+        return tarBitmap;
+    }
+
     /**
      * Decode and sample down a bitmap from a byte stream
      */
@@ -159,7 +254,7 @@ public class ImageUtility {
      * bitmaps using the decode* methods from {@link BitmapFactory}. This implementation calculates
      * the closest inSampleSize that is a power of 2 and will result in the final decoded bitmap
      * having a width and height equal to or larger than the requested width and height
-     *
+     * <p/>
      * The function rounds up the sample size to a power of 2 or multiple
      * of 8 because BitmapFactory only honors sample size this way.
      * For example, BitmapFactory downsamples an image by 2 even though the

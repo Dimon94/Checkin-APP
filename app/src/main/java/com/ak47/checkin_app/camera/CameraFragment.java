@@ -30,7 +30,7 @@ import com.ak47.checkin_app.R;
 import java.io.IOException;
 import java.util.List;
 
-//import com.desmond.squarecamera.R;
+
 
 public class CameraFragment extends Fragment implements SurfaceHolder.Callback, Camera.PictureCallback {
 

@@ -3,6 +3,8 @@ package com.ak47.checkin_app.camera;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,8 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.ak47.checkin_app.R;
-
-//import com.desmond.squarecamera.R;
 
 
 /**
@@ -41,7 +41,8 @@ public class EditSavePhotoFragment extends Fragment {
         return fragment;
     }
 
-    public EditSavePhotoFragment() {}
+    public EditSavePhotoFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +57,7 @@ public class EditSavePhotoFragment extends Fragment {
         int rotation = getArguments().getInt(ROTATION_KEY);
         int coverHeight = getArguments().getInt(COVER_HEIGHT_KEY);
         int imageViewHeight = getArguments().getInt(IMAGE_HEIGHT_KEY);
-        byte[] data = getArguments().getByteArray(BITMAP_KEY);
+        final byte[] data = getArguments().getByteArray(BITMAP_KEY);
 
         final View topCoverView = view.findViewById(R.id.cover_top_view);
         final View btnCoverView = view.findViewById(R.id.cover_bottom_view);
@@ -68,13 +69,29 @@ public class EditSavePhotoFragment extends Fragment {
 
         rotatePicture(rotation, data, photoImageView);
 
+        view.findViewById(R.id.add_watermark).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editPicture();
+            }
+        });
         view.findViewById(R.id.save_photo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                savePicture();
+                savePicture();
             }
         });
 //        Bmob.initialize(, "Your Application ID");
+    }
+
+    private void editPicture() {
+        ImageView photoImageView = (ImageView) getView().findViewById(R.id.photo);
+
+        Bitmap bitmap = ((BitmapDrawable) photoImageView.getDrawable()).getBitmap();
+        Bitmap newBitmap = ImageUtility.watermarkBitmap(bitmap, null, "位于："
+                ,getResources().getDisplayMetrics().densityDpi);
+
+        photoImageView.setImageBitmap(newBitmap);
     }
 
     private void rotatePicture(int rotation, byte[] data, ImageView photoImageView) {
@@ -97,11 +114,11 @@ public class EditSavePhotoFragment extends Fragment {
     }
 
     private void savePicture() {
-//        ImageView photoImageView = (ImageView) getView().findViewById(R.id.photo);
-//
-//        Bitmap bitmap = ((BitmapDrawable) photoImageView.getDrawable()).getBitmap();
-//        Uri photoUri = ImageUtility.savePicture(getActivity(), bitmap);
-//
-//        ((CameraActivity) getActivity()).returnPhotoUri(photoUri);
+        ImageView photoImageView = (ImageView) getView().findViewById(R.id.photo);
+
+        Bitmap bitmap = ((BitmapDrawable) photoImageView.getDrawable()).getBitmap();
+        Uri photoUri = ImageUtility.savePicture(getActivity(), bitmap);
+
+        ((CameraActivity) getActivity()).returnPhotoUri(photoUri);
     }
 }

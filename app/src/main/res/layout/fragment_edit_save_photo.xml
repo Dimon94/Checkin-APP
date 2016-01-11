@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="com.desmond.squarecamera.EditSavePhotoFragment">
+    tools:context="com.ak47.checkin_app.camera.EditSavePhotoFragment">
 
     <ImageView
         android:id="@+id/photo"
@@ -43,5 +43,15 @@
         android:src="@drawable/cancel_drawable"
         android:background="@android:color/transparent"
         android:onClick="onCancel"/>
+
+    <Button
+        android:id="@+id/add_watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:text="添加时间"/>
 
 </RelativeLayout>
